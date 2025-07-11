@@ -241,7 +241,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.1, y: -144.4}
+  m_AnchoredPosition: {x: -8, y: -66}
   m_SizeDelta: {x: 293.715, y: 55.072}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &33729879
@@ -813,7 +813,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 824, y: 373}
+  m_AnchoredPosition: {x: 702, y: 376}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &196801443
@@ -836,7 +836,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stumble
+  m_text: STUMBLE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0895108f37097ba4caf2b14037b9b3c4, type: 2}
   m_sharedMaterial: {fileID: -2713101441630993396, guid: 0895108f37097ba4caf2b14037b9b3c4, type: 2}
@@ -901,7 +901,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -629.14044, y: 0, z: 12.750938, w: -106.709015}
+  m_margin: {x: -535.451, y: 0, z: -95.44272, w: -106.709015}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1168,7 +1168,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250659594}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1178,7 +1178,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -175, y: 256}
+  m_AnchoredPosition: {x: -579.99994, y: 256}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &250659596
@@ -1201,9 +1201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '> Player Controls
-
-'
+  m_text: "> Controller Controls \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0895108f37097ba4caf2b14037b9b3c4, type: 2}
   m_sharedMaterial: {fileID: -2713101441630993396, guid: 0895108f37097ba4caf2b14037b9b3c4, type: 2}
@@ -1268,7 +1266,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -2.3263168, z: -322.90527, w: -32.707695}
+  m_margin: {x: 0, y: -2.3263168, z: -470.60577, w: -32.707695}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2181,7 +2179,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 43, y: -77.1}
+  m_AnchoredPosition: {x: 43, y: -100}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &642652969
@@ -2204,10 +2202,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "- <color=#FFC436>*NEW* </color> Configured Player Controls -\n   Players
-    will now choose to play as\n   Keyboard and Mouse (Player 1) or  \n   Controller 
-    (Player 2) \n\n- <color=#FFC436>*NEW*</color> Added Player Hand Toss - \n   Players
-    can now throw objects at\n   each other (\"R1-RB\" Controller / \"X\"\n   Keyboard)\n"
+  m_text: '- <color=#FFC436>*Movement* </color>To move the player use the left analog
+    stick.
+
+
+    - <color=#FFC436>*LOOK*</color> To look around use the right analog
+    stick.
+
+
+    - <color=#FFC436>*Tiles*</color> To raise the riles you must use
+    the right trigger and to lower the tiles is the left trigger'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0895108f37097ba4caf2b14037b9b3c4, type: 2}
   m_sharedMaterial: {fileID: -2713101441630993396, guid: 0895108f37097ba4caf2b14037b9b3c4, type: 2}
@@ -2234,8 +2238,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3646,7 +3650,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1314, y: 371}
+  m_AnchoredPosition: {x: 1289, y: 374}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &921841938
@@ -4347,9 +4351,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Patch Notes (V2.0)
-
-'
+  m_text: CONTROLS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cc6bd6ee353196c4091a23fb4d8aaa25, type: 2}
   m_sharedMaterial: {fileID: -2713101441630993396, guid: cc6bd6ee353196c4091a23fb4d8aaa25, type: 2}
@@ -4383,7 +4385,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -6139,7 +6141,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Patch Notes
+  m_text: CONTROLS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0895108f37097ba4caf2b14037b9b3c4, type: 2}
   m_sharedMaterial: {fileID: -2713101441630993396, guid: 0895108f37097ba4caf2b14037b9b3c4, type: 2}
@@ -6711,7 +6713,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 441, y: 256}
+  m_AnchoredPosition: {x: 171, y: 256}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1445113515
@@ -6734,7 +6736,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '> *NEW* Power UPs
+  m_text: '> Keyboard controls
 
 '
   m_isRightToLeft: 0
@@ -6801,7 +6803,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -2.3263168, z: -322.90527, w: -32.707695}
+  m_margin: {x: 0, y: -2.3263168, z: -406.66794, w: -32.707695}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8181,7 +8183,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 43, y: -77.1}
+  m_AnchoredPosition: {x: 43, y: -94}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1721866735
@@ -8204,14 +8206,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "- <color=#FFC436>*NEW* </color> Added Speed Boost: Player that \n   collides
-    with power up will \n   get a 4 second speed boost after\n   interacting with
-    speed boost pickup\n\n- <color=#FFC436>*NEW*</color> Added Jump Boost:  Player
-    \n   that collides with power up will \n   get a 4 second cooldown boost, \n  
-    allowing that player to jump higher\n\n- <color=#FFC436>*NEW*</color> Added Cooldown
-    Boost:  Player\n   that collides with power up will \n   get a 4 second cooldown
-    boost, \n   allowing that player to have a \n   shortened cool down period for
-    \n   moving tiles.\n"
+  m_text: '- <color=#FFC436>*Movement* </color> To move the player use the WASD keys
+
+
+    -
+    <color=#FFC436>*LOOK*</color> To look around use the mouse
+
+
+    - <color=#FFC436>*Tiles*</color>
+    To raise the riles you must use the C KEY and to lower the tiles is the V KEY.
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0895108f37097ba4caf2b14037b9b3c4, type: 2}
   m_sharedMaterial: {fileID: -2713101441630993396, guid: 0895108f37097ba4caf2b14037b9b3c4, type: 2}
@@ -8238,8 +8243,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9349,7 +9354,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.9819946, y: -49.5}
+  m_AnchoredPosition: {x: -6.9819946, y: 34}
   m_SizeDelta: {x: 293.715, y: 55.072}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2058835553
@@ -9637,7 +9642,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2073831176
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9855,7 +9860,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2113459824
 RectTransform:
   m_ObjectHideFlags: 0
