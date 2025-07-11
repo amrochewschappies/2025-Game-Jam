@@ -686,12 +686,12 @@ Transform:
   m_GameObject: {fileID: 1326057943977398110}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.15, z: -0.005}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -20.761293, y: -0.89693713, z: -12.479612}
+  m_LocalScale: {x: 0.5, y: 0.6000001, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6339054418214056710}
-  m_Father: {fileID: 7899611016283678652}
+  m_Father: {fileID: 308752912276158893}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &8640551355859740529
 Camera:
@@ -2086,6 +2086,54 @@ Transform:
   - {fileID: 384163322812052774}
   m_Father: {fileID: 4804120672141961844}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4672763537131506838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 308752912276158893}
+  - component: {fileID: 4420515312005582332}
+  m_Layer: 0
+  m_Name: HighEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &308752912276158893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4672763537131506838}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 41.522587, y: 1.6448951, z: 24.954224}
+  m_LocalScale: {x: 2, y: 1.6666664, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8015880498271335637}
+  m_Father: {fileID: 7899611016283678652}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4420515312005582332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4672763537131506838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f9b180bcd0da494bbecd9763ed6dc15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wobbleSpeed: 3.69
+  wobbleAmount: 0.33
+  rotationAmount: 20.9
 --- !u!1 &4722440948788342616
 GameObject:
   m_ObjectHideFlags: 0
@@ -2885,12 +2933,12 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7986000251815033873}
-  - {fileID: 8015880498271335637}
   - {fileID: 2880930229838116261}
   - {fileID: 3209760423961255478}
   - {fileID: 5910464082183458472}
   - {fileID: 174543627746818682}
   - {fileID: 6420259715246646755}
+  - {fileID: 308752912276158893}
   m_Father: {fileID: 8595243740805562429}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4082016936129933128
