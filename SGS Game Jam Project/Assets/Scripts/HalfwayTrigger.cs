@@ -11,7 +11,6 @@ public class HalfwayTrigger : MonoBehaviour
 
             if (_gameManager != null)
             {
-                _gameManager.CheckHalfWay(hitPlayer);
                 Debug.Log(hitPlayer.name + "is halfway");
             }
         }

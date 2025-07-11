@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 
 public class JumpBoostPickup : MonoBehaviour
@@ -15,10 +17,16 @@ public class JumpBoostPickup : MonoBehaviour
         Player1Overlay = GameObject.FindGameObjectWithTag("Player1Overlay").GetComponent<RawImage>();
         Player2Overlay = GameObject.FindGameObjectWithTag("Player2Overlay").GetComponent<RawImage>();
     }
+    private void Update()
+    {
+        Vector3 TurnRot = new Vector3(90 * Time.deltaTime, 0, 0); // Y-axis rotation
+        transform.Rotate(TurnRot);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         MonoBehaviour playerScript = null;
+
 
         // Check for PlayerController
         PlayerController player1 = other.GetComponent<PlayerController>();
@@ -37,7 +45,8 @@ public class JumpBoostPickup : MonoBehaviour
         if (playerScript != null)
         {
             StartCoroutine(ApplyJumpBoost(playerScript));
-
+            StartCoroutine(startEffect());
+            AudioManager.Instance.PlaySound("potion-effect", 1 , 0.7f , 0f, 1f);
             // Disable only the collider to prevent further pickups
             Collider collider = GetComponent<Collider>();
             if (collider != null)
@@ -51,12 +60,12 @@ public class JumpBoostPickup : MonoBehaviour
         }
     }
 
-    void SetOpacity(RawImage rawImage, float alphaValue)
+    void ApplyOverlay(RawImage rawImage, Color overlayColor, float alphaValue)
     {
-        Color color = rawImage.color;
-        color.a = alphaValue / 255f;  // Convert alpha from 0-255 range to 0-1
-        rawImage.color = color;
+        overlayColor.a = alphaValue / 255f;
+        rawImage.color = overlayColor;
     }
+
 
     private System.Collections.IEnumerator ApplyJumpBoost(MonoBehaviour playerScript)
     {
@@ -64,24 +73,33 @@ public class JumpBoostPickup : MonoBehaviour
 
         if (playerScript is PlayerController player1)
         {
-            SetOpacity(Player1Overlay, 187);
+            ApplyOverlay(Player1Overlay, Color.magenta, 187);
             originalJump = player1.GetJumpForce();
             player1.SetJumpForce(originalJump + jumpBoostAmount);
             yield return new WaitForSeconds(boostDuration);
             player1.SetJumpForce(originalJump);
-            SetOpacity(Player1Overlay, 0);
+            ApplyOverlay(Player1Overlay, Color.black, 15);
         }
         else if (playerScript is Player2Controller player2)
         {
-            SetOpacity(Player2Overlay, 187);
+            ApplyOverlay(Player2Overlay, Color.magenta, 187);
             originalJump = player2.GetJumpForce();
             player2.SetJumpForce(originalJump + jumpBoostAmount);
             yield return new WaitForSeconds(boostDuration);
             player2.SetJumpForce(originalJump);
             Debug.Log("Player Two Original Jump" + originalJump);
-            SetOpacity(Player1Overlay, 0);
+            ApplyOverlay(Player1Overlay,  Color.black, 15);
         }
 
         Destroy(gameObject); // Optional: delete the pickup
+    }
+    IEnumerator startEffect()
+    {
+        DrunkEffect effect = GameObject.Find("HighEffect").GetComponent<DrunkEffect>();
+        effect.enabled = true;
+        Debug.Log("jump effect enabled");
+        yield return new WaitForSeconds(boostDuration);
+        effect.enabled = false;
+        Debug.Log("jump effect disabled");
     }
 }

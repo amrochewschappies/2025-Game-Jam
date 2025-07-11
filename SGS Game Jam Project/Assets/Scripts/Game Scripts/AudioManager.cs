@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip[] jumpClips;
     [SerializeField] private AudioClip[] landClips;
     [SerializeField] private AudioClip[] ThrowClips;
+    [SerializeField] private AudioClip[] EffectClips;
     private void Awake()
     {
         // Singleton pattern
@@ -107,9 +108,6 @@ public class AudioManager : MonoBehaviour
                 break;
             case "land":
                 selectedClips = landClips;
-                break;
-            case "throw":
-                selectedClips = ThrowClips;
                 break;
             default:
                 Debug.LogWarning($"Action '{action}' not recognized.");

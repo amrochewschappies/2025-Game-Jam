@@ -169,7 +169,7 @@ public class Player2Controller : MonoBehaviour
             if (wasInAir && rb.linearVelocity.y < -3f)
             {
                 StartCoroutine(TriggerRumble(0.2f, 0.8f, 0.175f)); 
-                AudioManager.Instance.RandomiseActionSound("land", 2, 0.2f, 0f, 1f);
+               AudioManager.Instance.RandomiseActionSound("land", 2, 0.2f, 0f, 1f);
             }
             coyoteTimeCounter = coyoteTime;
             wasInAir = false;
@@ -186,7 +186,7 @@ public class Player2Controller : MonoBehaviour
         {
             if (!hasJumpSoundPlayed)
             {
-                AudioManager.Instance.RandomiseActionSound("jump", 2, 1f, 0f, 1f); 
+               AudioManager.Instance.RandomiseActionSound("jump", 2, 1f, 0f, 1f); 
                 hasJumpSoundPlayed = true; 
             }
             PlayerAnimator.SetBool("IsJumping", true);
@@ -234,7 +234,7 @@ public class Player2Controller : MonoBehaviour
         canThrow = false; 
         StartCoroutine(ResetThrowCooldown()); 
 
-        AudioManager.Instance.RandomiseActionSound("throw", 2, 1f, 0f, 1f);
+        //AudioManager.Instance.RandomiseActionSound("throw", 2, 1f, 0f, 1f);
         int randomIndex = UnityEngine.Random.Range(0, throwablePrefabs.Length);
         GameObject chosenPrefab = throwablePrefabs[randomIndex];
 

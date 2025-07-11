@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
         DeactivatePlayersMovement();
         Canvas.SetActive(false);
         AudioManager.Instance.PlaySound("Tiles Rising", 1 , 0.5f, 0f, 1.5f);
-        AudioManager.Instance.PlaySound("Announcer - Start", 1 , 0.5f, 5.5f, 1f);
+        //AudioManager.Instance.PlaySound("Announcer - Start", 1 , 0.5f, 5.5f, 1f);
     }
 
     private void Update()
@@ -118,9 +118,9 @@ public class GameManager : MonoBehaviour
             StartCoroutine(_player1.TriggerRumble(0.1f, 0.6f, 0.1f));
             if (AudioManager.Instance != null)
             {
-                AudioManager.Instance.PlaySound("Chime", 1, 1f, 0f,1f);
+               AudioManager.Instance.PlaySound("Chime", 1, 1f, 0f,1f);
                 AudioManager.Instance.PlaySound("TaDa", 1, 1f, 0.7f,1f);
-                AudioManager.Instance.PlaySound("Player1Wins", 1, 1f, 1.2f,1f);
+
           
             }
             Debug.Log("Loading back to start scene.");
@@ -135,9 +135,9 @@ public class GameManager : MonoBehaviour
            StartCoroutine(_player1.TriggerRumble(0.1f, 0.6f, 0.1f));
            if (AudioManager.Instance != null)
            {
-               AudioManager.Instance.PlaySound("Chime", 1, 1f, 0f,1f);
-               AudioManager.Instance.PlaySound("TaDa", 1, 1f, 0.7f,1f);
-               AudioManager.Instance.PlaySound("Player2Wins", 1, 1f, 1.2f,1f);
+              AudioManager.Instance.PlaySound("Chime", 1, 1f, 0f,1f);
+              AudioManager.Instance.PlaySound("TaDa", 1, 1f, 0.7f,1f);
+
            }
            Debug.Log("Loading back to start scene.");
     
@@ -161,10 +161,6 @@ public class GameManager : MonoBehaviour
             player1.transform.position = new Vector3(Podium.transform.position.x - 1f, Podium.transform.position.y + 2, Podium.transform.position.z);
             player1.transform.rotation = Quaternion.Euler(0f, 360f, 0f);
             player2.transform.rotation = Quaternion.Euler(0f, 360f, 0f);
-            if (AudioManager.Instance != null)
-            {
-                AudioManager.Instance.PlaySound("player1touched", 1, 1f, 0.5f,1f);  
-            }
             StartCoroutine(_player1.TriggerRumble(0.1f, 0.6f, 0.1f));
         }
         else if (player == player2)
@@ -174,51 +170,11 @@ public class GameManager : MonoBehaviour
             player2.transform.position = new Vector3(Podium.transform.position.x - 1f, Podium.transform.position.y + 2, Podium.transform.position.z);
             player1.transform.rotation = Quaternion.Euler(0f, 360f, 0f);
             player2.transform.rotation = Quaternion.Euler(0f, 360f, 0f);
-            if (AudioManager.Instance != null)
-            {
-                AudioManager.Instance.PlaySound("player2touched", 1, 1f, 0.5f,1f);
-            }
             StartCoroutine(_player1.TriggerRumble(0.1f, 0.6f, 0.1f));
         }
     }
-
-    public void CheckHalfWay(GameObject player)
-    {
-        if (player == player1)
-        {
-            if (!player1Halfway)  
-            {
-                if (AudioManager.Instance != null)
-                {
-                    AudioManager.Instance.PlaySound("Player1halfway", 1, 1f, 0.5f, 1f);
-                }
-                player1Halfway = true; 
-            }
-        }
-        else if (player == player2)
-        {
-            if (!player2Halfway) 
-            {
-                if (AudioManager.Instance != null)
-                {
-                    AudioManager.Instance.PlaySound("Player2halfway", 1, 1f, 0.5f, 1f);
-                }
-                player2Halfway = true; 
-            }
-        }
-
-        if (player1Halfway && player2Halfway)
-        {
-            OnBothPlayersHalfway();
-        }
-    }
-
-
-    private void OnBothPlayersHalfway()
-    {
-        Debug.Log("Both players have reached halfway!");
-
-    }
+    
+    
 }
    
     

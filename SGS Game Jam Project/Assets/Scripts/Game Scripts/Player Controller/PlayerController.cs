@@ -202,7 +202,7 @@ public class PlayerController : MonoBehaviour
         if (jumpInput && !hasJumpSoundPlayed)
         {
             if (!hasJumpSoundPlayed)
-            {
+            { 
                 AudioManager.Instance.RandomiseActionSound("jump", 1, 1f, 0f, 1f); 
                 hasJumpSoundPlayed = true; 
             }

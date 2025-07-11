@@ -1,6 +1,8 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using System.Collections;
 public class SpeedBoostPickup : MonoBehaviour
 {
     [Header("Speed Boost Settings")]
@@ -15,17 +17,24 @@ public class SpeedBoostPickup : MonoBehaviour
         Player2Overlay = GameObject.FindGameObjectWithTag("Player2Overlay").GetComponent<RawImage>();   
     }
 
-    void SetOpacity(RawImage rawImage, float alphaValue)
+    private void Update()
     {
-        Color color = rawImage.color;
-        color.a = alphaValue / 255f;  // Convert alpha from 0-255 range to 0-1
-        rawImage.color = color;
+        Vector3 TurnRot = new Vector3(90 * Time.deltaTime, 0, 0); // Y-axis rotation
+        transform.Rotate(TurnRot);
+    }
+
+    void ApplyOverlay(RawImage rawImage, Color overlayColor, float alphaValue)
+    {
+        overlayColor.a = alphaValue / 255f;
+        rawImage.color = overlayColor;
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
+       // AudioManager.Instance.PlaySound("",1 , 0.3f , 0f , 1f);
         MonoBehaviour playerScript = null;
+
 
         // Check if the collider has PlayerController
         PlayerController player1 = other.GetComponent<PlayerController>();
@@ -44,7 +53,10 @@ public class SpeedBoostPickup : MonoBehaviour
         // If we found a valid player script, apply the boost
         if (playerScript != null)
         {
+           
+            StartCoroutine(startEffect());
             StartCoroutine(ApplySpeedBoost(playerScript));// Disable only the collider to prevent further pickups
+            AudioManager.Instance.PlaySound("cocaine-effect", 1 , 0.7f , 0f, 1f);
             Collider collider = GetComponent<Collider>();
             if (collider != null)
             {
@@ -57,30 +69,39 @@ public class SpeedBoostPickup : MonoBehaviour
         }
     }
 
-    private System.Collections.IEnumerator ApplySpeedBoost(MonoBehaviour playerScript)
+    private IEnumerator ApplySpeedBoost(MonoBehaviour playerScript)
     {
         float originalSpeed = 0f;
 
-        // Try to call the right Get/Set methods based on type
         if (playerScript is PlayerController player1)
         {
-            SetOpacity(Player1Overlay, 187);
+            ApplyOverlay(Player1Overlay, Color.white, 187);
             originalSpeed = player1.GetMoveSpeed();
             player1.SetMoveSpeed(originalSpeed + speedBoostAmount);
             yield return new WaitForSeconds(boostDuration);
             player1.SetMoveSpeed(originalSpeed);
-            SetOpacity(Player1Overlay, 0);
+            ApplyOverlay(Player1Overlay, Color.black, 15);
         }
         else if (playerScript is Player2Controller player2)
         {
-            SetOpacity(Player2Overlay, 0);
+            ApplyOverlay(Player2Overlay, Color.white, 187);
             originalSpeed = player2.GetMoveSpeed();
             player2.SetMoveSpeed(originalSpeed + speedBoostAmount);
             yield return new WaitForSeconds(boostDuration);
             player2.SetMoveSpeed(originalSpeed);
-            SetOpacity(Player2Overlay, 0);
+            ApplyOverlay(Player2Overlay, Color.black, 15);
         }
 
-        Destroy(gameObject); // Optional: remove pickup completely
+        Destroy(gameObject);
+    }
+
+    IEnumerator startEffect()
+    {
+        DrunkEffect effect = GameObject.Find("HighEffect").GetComponent<DrunkEffect>();
+        effect.enabled = true;
+        Debug.Log("cocaine effect enabled");
+        yield return new WaitForSeconds(boostDuration);
+        effect.enabled = false;
+        Debug.Log("cocaine effect disabled");
     }
 }
