@@ -6466,7 +6466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &769196320
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7667,7 +7667,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 846615868}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b97d5c15d8b5e1c4f9b29d18e24a31f6, type: 3}
   m_Name: 
@@ -10001,7 +10001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &993162507
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13069,7 +13069,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1288051765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16500,6 +16500,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 2 Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 4378057191708051750, guid: fa385697248016c4e91bdc09109441c8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4748783022483979404, guid: fa385697248016c4e91bdc09109441c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.06
@@ -19928,7 +19932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1849941549
 RectTransform:
   m_ObjectHideFlags: 0

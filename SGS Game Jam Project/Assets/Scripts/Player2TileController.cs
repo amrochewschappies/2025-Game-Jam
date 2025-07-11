@@ -76,8 +76,8 @@ public class Player2TileController : MonoBehaviour
 
         if (isMoving)
         {
-            CooldownSlider.gameObject.SetActive(true);
-            CooldownSlider.value = countdown;
+            //CooldownSlider.gameObject.SetActive(true);
+            //CooldownSlider.value = countdown;
 
             if (countdown > 0)
             {
@@ -89,7 +89,7 @@ public class Player2TileController : MonoBehaviour
             {
                 isMoving = false;
                 countdown = cooldownDuration; // Use the adjustable cooldown
-                CooldownSlider.gameObject.SetActive(false);
+                //CooldownSlider.gameObject.SetActive(false);
             }
         }
     }
