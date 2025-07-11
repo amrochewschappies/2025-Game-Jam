@@ -83,10 +83,8 @@ public class VideoController : MonoBehaviour
             case 0:
                 return playerInput.actions["Move"].triggered;
             case 1:
-                return playerInput.actions["Jump"].triggered;
-            case 2:
                 return playerInput.actions["TileUp"].triggered;
-            case 3:
+            case 2:
                 return playerInput.actions["TileDown"].triggered;
             default:
                 return false;
@@ -109,13 +107,6 @@ public class VideoController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame ||
-           Gamepad.current?.startButton.wasPressedThisFrame == true ||
-           Gamepad.current?.selectButton.wasPressedThisFrame == true)
-        {
-            Debug.Log("Video skipped via input.");
-            SceneManager.LoadScene("StartScene");
-        }
 
         if (videoPlayer.isPlaying && videoPlayer.frame >= (long)videoPlayer.frameCount - 1)
         {
