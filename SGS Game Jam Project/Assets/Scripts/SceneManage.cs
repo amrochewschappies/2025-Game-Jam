@@ -151,7 +151,7 @@ public class SceneManage : MonoBehaviour
 
     private void randomiseScene()
     {
-        int RandomNum = UnityEngine.Random.Range(1,4);
+        int RandomNum = UnityEngine.Random.Range(1,2);
         if (RandomNum >=3)
         {
             StartCoroutine(WaitBeforeLoadingMain());

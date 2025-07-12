@@ -11,6 +11,7 @@ public class VideoController : MonoBehaviour
     public PlayerInput playerInput;
 
     private int currentPauseIndex = 0; // To track the current pause in the sequence
+    public GameObject ChineseVideo;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -111,7 +112,14 @@ public class VideoController : MonoBehaviour
         if (videoPlayer.isPlaying && videoPlayer.frame >= (long)videoPlayer.frameCount - 1)
         {
             Debug.Log("Video completed in Update!");
-            SceneManager.LoadScene("StartScene");
+            StartCoroutine(SecondVideo());
         }
+    }
+
+    private IEnumerator SecondVideo()
+    {
+        ChineseVideo.SetActive(true);
+        yield return new WaitForSeconds(16);
+        SceneManager.LoadScene("GameScene");
     }
 }

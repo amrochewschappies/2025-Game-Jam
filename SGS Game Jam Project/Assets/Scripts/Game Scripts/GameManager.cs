@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour
     [Header("References")] 
     public PlayerController _player1;
     public Player2Controller _player2;
+
+    public GameObject WinnerVideo;
+    public GameObject ScreenThingy;
     
     
     public GameObject player1;
@@ -110,6 +113,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SceneManage.smInstance.WaitBeforeLoading());
         if (player == player1)
         {
+            StartCoroutine(playClosingVideo());
             WinnerText.text = "Player 1 Wins!";
             player1.transform.position = new Vector3(Podium.transform.position.x, Podium.transform.position.y + 2, Podium.transform.position.z);
             player2.transform.position = new Vector3(Podium.transform.position.x - 1f, Podium.transform.position.y + 2, Podium.transform.position.z);
@@ -127,6 +131,7 @@ public class GameManager : MonoBehaviour
         }
         else if (player == player2)
         {
+            StartCoroutine(playClosingVideo());
             WinnerText.text = "Player 2 Wins!";
             player2.transform.position = new Vector3(Podium.transform.position.x, Podium.transform.position.y + 2, Podium.transform.position.z);
             player1.transform.position = new Vector3(Podium.transform.position.x - 1f, Podium.transform.position.y + 2, Podium.transform.position.z);
@@ -156,6 +161,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SceneManage.smInstance.WaitBeforeLoading());
         if (player == player1)
         {
+            StartCoroutine(playClosingVideo());
             WinnerText.text = "Player 2 Wins!";
             player2.transform.position = new Vector3(Podium.transform.position.x, Podium.transform.position.y + 2, Podium.transform.position.z);
             player1.transform.position = new Vector3(Podium.transform.position.x - 1f, Podium.transform.position.y + 2, Podium.transform.position.z);
@@ -165,6 +171,7 @@ public class GameManager : MonoBehaviour
         }
         else if (player == player2)
         {
+            StartCoroutine(playClosingVideo());
             WinnerText.text = "Player 1 Wins!";
             player1.transform.position = new Vector3(Podium.transform.position.x, Podium.transform.position.y + 2, Podium.transform.position.z);
             player2.transform.position = new Vector3(Podium.transform.position.x - 1f, Podium.transform.position.y + 2, Podium.transform.position.z);
@@ -174,7 +181,14 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    
+    IEnumerator playClosingVideo()
+    {
+        WinnerVideo.SetActive(true);
+        ScreenThingy.SetActive(true);
+        yield return new WaitForSeconds(14);
+        WinnerVideo.SetActive(false);
+        ScreenThingy.SetActive(false);
+    }
 }
    
     
