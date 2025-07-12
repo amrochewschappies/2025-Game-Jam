@@ -47,7 +47,7 @@ public class SceneManage : MonoBehaviour
                Gamepad.current?.selectButton.wasPressedThisFrame == true)
             {
                 Debug.Log("Video skipped via input.");
-                SceneManager.LoadScene("TutorialScene");
+                SceneManager.LoadScene("StartScene");
             }
 
             timer += Time.deltaTime;
@@ -59,7 +59,7 @@ public class SceneManage : MonoBehaviour
 
             if (currentTime >= 42f)
             {
-                LoadTutorialScene();
+                LoadStartScene();
                 isLoaded = true;
             }
         }
